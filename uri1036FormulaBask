@@ -1,0 +1,47 @@
+\*Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. 
+Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, 
+caso haja uma divisão por 0 ou raiz de numero negativo.
+
+Entrada
+Leia três valores de ponto flutuante (double) A, B e C.
+
+Saída
+Se não houver possibilidade de calcular as raízes, apresente a mensagem "Impossivel calcular". 
+Caso contrário, imprima o resultado das raízes com 5 dígitos após o ponto, 
+com uma mensagem correspondente conforme exemplo abaixo. Imprima sempre o final de linha após cada mensagem.
+
+Exemplos de Entrada 
+10.0 20.1 5.1
+	
+Exemplos de Saída
+R1 = -0.29788
+R2 = -1.71212 */
+
+//Accepted
+-------------------------------
+
+#include <iostream>
+#include <math.h>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+	float A, B, C, delta, r1, r2;
+	cin >> A >> B >> C;
+	delta = B*B-4*A*C;
+	if(delta > 0 && 2*A != 0){
+		r1 = (-B+sqrt(delta))/(2*A);
+		r2 = (-B-sqrt(delta))/(2*A);
+		cout << fixed;
+		cout.precision(5);
+		cout << "R1 = " << r1 << endl;
+		cout << fixed;
+		cout.precision(5);
+		cout << "R2 = " << r2 << endl;
+	}else{
+		cout << "Impossivel calcular" << endl;
+	}
+
+	return 0;
+}
