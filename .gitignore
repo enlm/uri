@@ -1,0 +1,81 @@
+URI 1021
+Leia um valor de ponto flutuante com duas casas decimais. Este valor representa um valor monetário.
+A seguir, calcule o menor número de notas e moedas possíveis no qual o valor pode ser decomposto. 
+As notas consideradas são de 100, 50, 20, 10, 5, 2. As moedas possíveis são de 1, 0.50, 0.25, 0.10, 0.05 e 0.01.
+A seguir mostre a relação de notas necessárias.
+
+Entrada
+O arquivo de entrada contém um valor de ponto flutuante N (0 ≤ N ≤ 1000000.00).
+
+Saída
+Imprima a quantidade mínima de notas e moedas necessárias para trocar o valor inicial, conforme exemplo fornecido.
+-----------------------
+Ex:
+Entrada
+576.73
+Saída
+NOTAS:
+5 nota(s) de R$ 100.00
+1 nota(s) de R$ 50.00
+1 nota(s) de R$ 20.00
+0 nota(s) de R$ 10.00
+1 nota(s) de R$ 5.00
+0 nota(s) de R$ 2.00
+MOEDAS:
+1 moeda(s) de R$ 1.00
+1 moeda(s) de R$ 0.50
+0 moeda(s) de R$ 0.25
+2 moeda(s) de R$ 0.10
+0 moeda(s) de R$ 0.05
+3 moeda(s) de R$ 0.01
+-------------------------
+
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+	float N;
+	int nota;
+	cin >> N;
+	cout << "NOTAS:\n";
+	nota = N/100;
+	N = N - nota*100;
+	cout << nota << " nota(s) de R$ 100.00\n";
+	nota = N/50;
+	N = N - nota*50;
+	cout << nota << " nota(s) de R$ 50.00\n";
+	nota = N/20;
+	N = N - nota*20;
+	cout << nota << " nota(s) de R$ 20.00\n";
+	nota = N/10;
+	N = N - nota*10;
+	cout << nota << " nota(s) de R$ 10.00\n";
+	nota = N/5;
+	N = N - nota*5;
+	cout << nota << " nota(s) de R$ 5.00\n";
+	nota = N/2;
+	N = N - nota*2;
+	cout << nota << " nota(s) de R$ 2.00\n";
+	cout << "MOEDAS:\n";
+	nota = N/1;
+	N = N - nota*1;
+	cout << nota << " moedas(s) de R$ 1.00\n";
+	nota = N/0.5;
+	N = N - nota*0.5;
+	cout << nota << " moedas(s) de R$ 0.50\n";
+	nota = N/0.25;
+	N = N - nota*0.25;
+	cout << nota << " moedas(s) de R$ 0.25\n";
+	nota = N/0.1;
+	N = N - nota*0.1;
+	cout << nota << " moedas(s) de R$ 0.10\n";
+	nota = N/0.05;
+	N = N - nota*0.05;
+	cout << nota << " moedas(s) de R$ 0.05\n";
+	nota = N/0.01;
+	N = N - nota*0.01;
+	cout << nota << " moedas(s) de R$ 0.01\n";
+	return 0;
+}
