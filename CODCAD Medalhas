@@ -1,0 +1,50 @@
+A natação foi um dos esportes mais emocionantes das Olimpíadas do Rio. 
+Houve até uma prova na qual três atletas chegaram empatados, cada um recebendo uma medalha de prata! 
+Normalmente, porém, os três primeiros colocados terminam a prova em tempos distintos e, portanto, 
+temos a distribuição mais comum de medalhas: o nadador que terminou no menor tempo recebe medalha de ouro; 
+o nadador que terminou com o segundo menor tempo recebe medalha de prata; 
+e o que terminou com o terceiro menor tempo recebe medalha de bronze. 
+Neste problema, dados os três tempos distintos de finalização da prova, dos três nadadores que ganharam medalhas, 
+seu programa deve dizer quem ganhou medalha de ouro, quem ganhou prata e quem ganhou bronze.
+
+Entrada
+
+A primeira linha da entrada contém um inteiro T1, indicando o tempo em que o nadador 1 terminou a prova. 
+A segunda linha da entrada contém um inteiro T2, indicando o tempo de finalização do nadador 2. 
+Por fim, a terceira linha da entrada contém um inteiro T3, indicando o tempo em que o nadador 3 terminou a prova.
+
+Saída
+Seu programa deve imprimir três linhas na saída. A primeira linha deve conter o número do nadador que ganhou medalha de ouro; a segunda linha, o número do nadador que ganhou prata; e a terceira linha, o número do nadador que levou bronze.
+
+
+T1, T2 e T3 são inteiros distintos, com valores entre 1 e 1000, inclusive.
+
+Ex: Ent: 230 183 234 Saida: 2 1 3
+Ex: Ent: 46 47 48 Saida: 1 2 3
+Ex: Ent: 11 21 7 Saida: 3 1 2
+
+
+#include <iostream>
+ 
+using namespace std;
+
+ 
+int main()
+{
+    int T1, T2, T3;
+    cin >> T1 >> T2 >> T3;
+    if(T1<T2 && T2<T3){
+      cout << "1\n2\n3\n";
+    }else if (T1<T2 && T2<T3){
+      cout << "1\n3\n2\n";
+    }else if(T2<T3 && T3<T1){
+      cout << "2\n3\n1\n";
+    }else if (T2<T1 && T1<T3){
+      cout << "2\n1\n3\n";
+    }else if(T3<T1 && T1<T2){
+      cout << "3\n1\n2\n";
+    }else if(T3<T2 && T2<T1){
+      cout << "3\n2\n1\n";
+    }
+    return 0;
+ }
